@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Logs</title>
+</head>
+<body>
+    <h2>Gerador de logs</h2>
+    <button type="button"><a href="{{ url_for('log_trace') }}">TRACE</a></button>
+    <button type="button"><a href="{{ url_for('log_info') }}">INFO</a></button>
+    <button type="button"><a href="{{ url_for('log_debug') }}">DEBUG</a></button>
+    <button type="button"><a href="{{ url_for('log_success') }}">SUCCESS</a></button>
+    <button type="button"><a href="{{ url_for('log_warn') }}">WARNING</a></button>
+    <button type="button"><a href="{{ url_for('log_error') }}">ERROR</a></button>
+    <button type="button"><a href="{{ url_for('log_critical') }}">CRITICAL</a></button>    
+</body>
+</html>

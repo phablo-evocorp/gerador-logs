@@ -1,0 +1,8 @@
+# Ignore everything
+*
+
+# Except these files and folders
+!app.py
+!requirements.txt
+!/static
+!/templates
