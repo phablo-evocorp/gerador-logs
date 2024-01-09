@@ -2,6 +2,8 @@ from flask import Flask, render_template
 from loguru import logger
 app = Flask(__name__)
 
+logger.add("/logs/logs.log", format="| Level={level} | Message={message}")
+
 @app.route('/')
 def index():
     return render_template("index.html")
@@ -14,38 +16,37 @@ def log_info():
 
 @app.route('/log_trace')
 def log_trace():
-    logger.add("./logs/logs.log")
-    logger.info("Informação do registro TRACE")
+    logger.trace("Informação do registro TRACE")
     return render_template("index.html")
 
 @app.route('/log_debug')
 def log_debug():
     #logger.add("./logs/logs.log")
-    logger.info("Informação do registro DEBUG")
+    logger.debug("Informação do registro DEBUG")
     return render_template("index.html")
 
 @app.route('/log_success')
 def log_success():
     #logger.add("./logs/logs.log")
-    logger.info("Informação do registro SUCCESS")
+    logger.success("Informação do registro SUCCESS")
     return render_template("index.html")
 
 @app.route('/log_warn')
 def log_warn():
     #logger.add("./logs/logs.log")
-    logger.info("Informação do registro WARNING")
+    logger.warning("Informação do registro WARNING")
     return render_template("index.html")
 
 @app.route('/log_error')
 def log_error():
     #logger.add("./logs.log")
-    logger.info("Informação do registro ERROR")
+    logger.error("Informação do registro ERROR")
     return render_template("index.html")
 
 @app.route('/log_critical')
 def log_critical():
     #logger.add("./logs.log")
-    logger.info("Informação do registro CRITICAL")
+    logger.critical("Informação do registro CRITICAL")
     return render_template("index.html")
 
 if __name__ == '__main__':

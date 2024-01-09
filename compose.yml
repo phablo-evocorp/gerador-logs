@@ -1,5 +1,10 @@
 version: '3.6'
 
+volumes:
+  log-data:
+    external:
+      name: logs-data-services
+
 services:
   gerador-logs:
     build: 
@@ -8,4 +13,6 @@ services:
     ports:
       - 5000:5000
     volumes:
+      - log-data:/logs
       - .:/app
+      
